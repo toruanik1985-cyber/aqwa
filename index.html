@@ -1,0 +1,657 @@
+
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="description" content="Акваторія Детейлинг Центр — преміальне миття, полірування та керамічне покриття авто в Дніпро. Німецькі засоби, гарантія якості.">
+    <title>Акваторія Детейлинг цент | Преміум мийка, кераміка, полірування</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0F;
+            color: #F0F3FA;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.4rem 0;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+            background: linear-gradient(135deg, #FFFFFF, #6BB5FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo i {
+            background: none;
+            color: #3D9CFF;
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #DDDEEB;
+            text-decoration: none;
+            transition: 0.2s;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #3D9CFF;
+        }
+        .tiktok-nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0,0,0,0.4);
+            padding: 6px 14px;
+            border-radius: 60px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(105deg, #1F2A48 0%, #12172F 100%);
+            border: 1px solid rgba(61,156,255,0.3);
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #F0F3FA;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: linear-gradient(95deg, #2B6EDF, #1A4BBF);
+            border: none;
+            box-shadow: 0 8px 18px rgba(43,110,223,0.25);
+        }
+        .btn-primary:hover {
+            background: linear-gradient(95deg, #3D7EFF, #1F55CF);
+            transform: scale(1.02);
+            box-shadow: 0 12px 22px rgba(43,110,223,0.4);
+        }
+        .btn-outline:hover {
+            border-color: #3D9CFF;
+            background: rgba(61,156,255,0.1);
+        }
+        section {
+            padding: 5rem 0;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: #3D9CFF;
+            border-radius: 6px;
+        } 
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .service-card {
+            background: rgba(18, 20, 28, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 20px 32px -12px rgba(0,0,0,0.5);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 28px 38px -12px rgba(61,156,255,0.25);
+            border-color: rgba(61,156,255,0.5);
+        }
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.45s;
+        }
+        .card-content {
+            padding: 1.6rem;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.65rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+        .price-badge {
+            background: rgba(61,156,255,0.2);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #6BB5FF;
+        }
+        .card-text {
+            color: #B0B3C5;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            margin-bottom: 1rem;
+        }
+        .service-feature {
+            font-size: 0.85rem;
+            color: #C0C4DC;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding-top: 0.9rem;
+            margin-top: 0.6rem;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .service-feature span i {
+            color: #3D9CFF;
+            margin-right: 6px;
+        }
+        .extra-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .extra-item {
+            background: rgba(12, 14, 22, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 24px;
+            padding: 1.3rem 1.5rem;
+            transition: 0.2s;
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+        .extra-item i {
+            font-size: 2rem;
+            color: #3D9CFF;
+            margin-bottom: 12px;
+        }
+        .extra-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .extra-item p {
+            font-size: 0.85rem;
+            color: #A0A4BC;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .benefit-card {
+            background: rgba(22, 24, 34, 0.6);
+            border-radius: 32px;
+            padding: 1.8rem 1.2rem;
+            transition: all 0.2s;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+        .benefit-card i {
+            font-size: 2.6rem;
+            background: linear-gradient(145deg, #3D9CFF, #1C6FD9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .benefit-card p {
+            color: #B6BAD4;
+            font-size: 0.9rem;
+        } 
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            background: linear-gradient(125deg, #0E101A, #0A0C14);
+            border-radius: 40px;
+            padding: 2.8rem;
+            border: 1px solid rgba(61,156,255,0.2);
+            margin-top: 1rem;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.3rem;
+        }
+        .contact-detail i {
+            width: 36px;
+            height: 36px;
+            background: #1C2137;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #3D9CFF;
+        }
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        .social-icons a {
+            color: #CACDE8;
+            font-size: 1.7rem;
+            transition: 0.2s;
+        }
+        .social-icons a:hover {
+            color: #3D9CFF;
+            transform: translateY(-3px);
+        }
+        .form-group {
+            margin-bottom: 1.3rem;
+        }
+        input, select {
+            width: 100%;
+            padding: 14px 18px;
+            background: #141824;
+            border: 1px solid #2A2F42;
+            border-radius: 28px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #3D9CFF;
+            box-shadow: 0 0 0 2px rgba(61,156,255,0.2);
+        }
+        button[type="submit"] {
+            border: none;
+            width: 100%;
+            font-weight: 700;
+            padding: 14px;
+            font-size: 1rem;
+        }
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7C7F99;
+        }
+        @media (max-width: 760px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1.2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .contact-wrapper {
+                padding: 1.8rem;
+                flex-direction: column;
+            }
+            section {
+                padding: 3rem 0;
+            }
+            .card-title {
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* === НОВИЙ HERO З ВІДЕОФОНОМ === */
+        .hero {
+            position: relative;
+            padding: 4rem 0 6rem;
+            overflow: hidden;
+            margin-top: 0;
+        }
+        .hero-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.65);
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%);
+            z-index: 1;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content {
+            max-width: 700px;
+        }
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, #FFD966, #FFB347, #FF6B6B, #3D9CFF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #F0F3FA;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            margin-bottom: 2rem;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero {
+                padding: 3rem 0 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-water"></i> Акваторія
+            </div>
+            <div class="nav-links">
+                <a href="#services">Послуги</a>
+                <a href="#advantages">Переваги</a>
+                <a href="#extra">Додатково</a>
+                <a href="#contact">Контакти</a>
+                <a href="https://www.tiktok.com/@ievhen8?_r=1&_t=ZS-96hzH5J7EFZ" target="_blank" rel="noopener noreferrer" class="tiktok-nav-link">
+                    <i class="fab fa-tiktok"></i> TikTok
+                </a>
+            </div>
+        </nav>
+    </div> 
+
+    <section class="hero">
+        <!-- Відеофон – замініть шлях на своє відео -->
+        <video class="hero-video-bg" autoplay muted loop playsinline>
+            <source src="img/IMG_4011.mp4" type="video/mp4">
+            <!-- fallback зображення, якщо відео не завантажилось -->
+            <img src="img/IMG_4011.mp4" alt="background" style="width:100%; height:100%; object-fit:cover;">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Акваторія <span style="background: linear-gradient(135deg, #FFD966, #FF6B6B); -webkit-background-clip: text; background-clip: text; color: transparent;">Детейлинг Центр</span></h1>
+                <p style="font-size: 1.2rem; color: #FFFFFF; text-shadow: 0 1px 5px rgba(0,0,0,0.6);">Преміальне миття, бездоганне полірування та надійний захист керамікою. Поверніть авто ідеальний вигляд на роки вперед.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary"><i class="fas fa-calendar-alt"></i> Записатись онлайн</a>
+                    <a href="tel:+380971234567" class="btn btn-outline"><i class="fas fa-phone-alt"></i> +38 068 9192744</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Ключові послуги</h2>
+            <div class="cards-grid">
+                <div class="service-card">
+                    <img class="card-img" src="img/toyota.jpg" alt="Премиум мийка авто" loading="lazy">
+                    <div class="card-content">
+                        <div class="card-title">
+                            Премиум мийка
+                            <span class="price-badge">від 800грн.</span>
+                        </div>
+                        <div class="card-text">Безконтактна, двофазна піна, ручне сушіння. Обробка коліс, Дбайливе покриття для ЛФП.рідкий віск , очищення пластика в салоні , поліроль для пластика на вибір ,черніння гуми, відновлення зовнішнього пластика</div>
+                        <div class="service-feature">
+                            <span><i class="fas fa-droplet"></i> Німецька хімія</span>
+                            <span><i class="fas fa-microfiber"></i> Мікрофібра</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img class="card-img" src="img/polir.jpg" alt="Полірування кузова" loading="lazy">
+                    <div class="card-content">
+                        <div class="card-title">
+                            Полірування
+                            <span class="price-badge">від 8000 грн.</span>
+                        </div>
+                        <div class="card-text">Відновлення фарби, видалення подряпин, голограм та оксидування. 1-3 етапи полірування. Повертає глибину кольору.</div>
+                        <div class="service-feature">
+                            <span><i class="fas fa-sun"></i> Антиголограма</span>
+[27.05.2026 18:45] Євген: <span><i class="fas fa-gem"></i> Дзеркальний блиск</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img class="card-img" src="img/keramik.jpg" alt="Керамічне покриття авто" loading="lazy">
+                    <div class="card-content">
+                        <div class="card-title">
+                            Кераміка
+                            <span class="price-badge">від 15000грн.</span>
+                        </div>
+                        <div class="card-text">Гідрофобний захист до 3+ років. Захист від УФ, хімічних реагентів та дрібних пошкоджень. Сертифіковані склади.</div>
+                        <div class="service-feature">
+                            <span><i class="fas fa-shield-alt"></i> Гарантія 24 міс.</span>
+                            <span><i class="fas fa-tachometer-alt"></i> Грязьовідштовхувальна</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <section id="extra">
+        <div class="container">
+            <h2 class="section-title">Додаткові послуги</h2>
+            <div class="extra-grid">
+                <div class="extra-item"><i class="fas fa-car-side"></i><h4>Хімчистка салону</h4><p>Глибоке чищення тканин, шкіри, пластику. Видалення запахів, плям.</p></div>
+                <div class="extra-item"><i class="fas fa-shield-virus"></i><h4>Твердий віск</h4><p>Захист вашого авто від 3 до 8 місяців класний гідрофоб , захищає лакофарбове покриття від плям , вигорання лаку ,та бруду</p></div>
+                <div class="extra-item"><i class="fas fa-tint"></i><h4>Видалення водного каменю</h4><p>Надасть прозорості скла, прибере жировий наліт, це ваша безпека руху та огляд водія.</p></div>
+                <div class="extra-item"><i class="fas fa-wind"></i><h4>Видалення бітуму та металевих вкраплень</h4><p>Приберемо бітум з ЛФП безпечно, металеві вкраплення від колодок, що захистить авто від корозії.</p></div>
+                <div class="extra-item"><i class="fas fa-brush"></i><h4>Детейлінг двигуна</h4><p>Професійне очищення моторного відсіку, консервація пластику та гумових елементів.</p></div>
+                <div class="extra-item"><i class="fas fa-fan"></i><h4>Детейлинг</h4><p>це детальне очищення кузова ,проємів ,та кожна деталь салону авто спецзасобами , ідевідульний підхід до кожного авто </p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages">
+        <div class="container">
+            <h2 class="section-title">Чому обирають нас</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card"><i class="fas fa-tools"></i><h3>Сертифіковане обладнання</h3><p>Професійні ротори, пінокомплекти, лампи та IR-термометри для ідеального результату.</p></div>
+                <div class="benefit-card"><i class="fas fa-flask"></i><h3>Хімія преміум класу</h3><p>Koch Chemie, Gtechniq, Gyeon — оригінальні засоби без ризику пошкодження ЛФП.</p></div>
+                <div class="benefit-card"><i class="fas fa-chart-line"></i><h3>Гарантія на роботи</h3><p>Ми впевнені в якості. Даємо гарантію на полірування та кераміку до 24 місяців.</p></div>
+                <div class="benefit-card"><i class="fas fa-stopwatch"></i><h3>Дотримання термінів</h3><p>Пунктуальність та прозора звітність по етапах роботи. Індивідуальний підхід до кожного авто.</p></div>
+            </div>
+        </div>
+    </section> 
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Зв’язатись з нами</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3><i class="fas fa-map-pin"></i> Контакти</h3>
+                    <div class="contact-detail"><i class="fas fa-location-dot"></i> м. Дніпро, вул. Велика Діївська 111м (діагностичний центр)</div>
+                    <div class="contact-detail"><i class="fas fa-clock"></i> Пн-Сб: 09:00 – 20:00, Нд: 10:00 – 17:00</div>
+[27.05.2026 18:45] Євген: <div class="contact-detail"><i class="fas fa-phone"></i> +38 068 9192744</div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i> toruanik1985@gmail.com</div>
+                    <div class="social-icons">
+                        <a href="mailto:toruanik1985@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.tiktok.com/@ievhen8?_r=1&_t=ZS-96hzH5J7EFZ" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <a href="https://www.tiktok.com/@ievhen8?_r=1&_t=ZS-96hzH5J7EFZ" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 8px 18px;">
+                            <i class="fab fa-tiktok"></i> Підписуйтесь у TikTok
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Запишіться на консультацію</h3>
+                    <form id="callbackForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Ваше ім’я" id="userName" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Номер телефону" id="userPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="service" id="serviceSelect" required>
+                                <option value="" disabled selected>Оберіть послугу</option>
+                                <option>Преміум мийка</option>
+                                <option>Полірування кузова</option>
+                                <option>Керамічне покриття</option>
+                                <option>Хімчистка салону</option>
+                                <option>Інше / консультація</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%"><i class="fas fa-paper-plane"></i> Надіслати заявку</button>
+                        <p style="font-size: 0.7rem; color:#7A7E9E; margin-top: 12px;">Заявка надійде на електронну пошту toruanik1985@gmail.com</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Акваторія Детейлинг Центр — преміальний догляд за авто. Всі права захищено.</p>
+            <p style="margin-top: 8px;"><i class="fas fa-check-circle" style="color:#3D9CFF;"></i> 100% якість | <i class="fas fa-hand-holding-heart"></i> Любов до деталей</p>
+        </div>
+    </footer>
+
+    <script>
+        // FormSubmit відправка заявок на email
+        const form = document.getElementById('callbackForm');
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const name = document.getElementById('userName').value.trim();
+            const phone = document.getElementById('userPhone').value.trim();
+            const service = document.getElementById('serviceSelect').value;
+            if (!name || !phone) {
+                alert("Будь ласка, вкажіть ім'я та номер телефону.");
+                return;
+            }
+            if (!service || service === "Оберіть послугу") {
+                alert("Виберіть послугу для зручності консультації.");
+                return;
+            }
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('phone', phone);
+            formData.append('service', service);
+            formData.append('_captcha', 'false');
+            formData.append('_subject', `Нова заявка від ${name} (Акваторія Детейлинг)`);
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/toruanik1985@gmail.com', {
+                    method: 'POST',
+[27.05.2026 18:45] Євген: body: formData
+                });
+                if (response.ok) {
+                    alert(`Дякуємо, ${name}! Вашу заявку на "${service}" отримано. Ми зателефонуємо вам за номером ${phone} найближчим часом.`);
+                    form.reset();
+                } else {
+                    alert('Виникла помилка. Спробуйте пізніше або зателефонуйте нам.');
+                }
+            } catch (error) {
+                console.error('Помилка:', error);
+                alert('Не вдалося надіслати заявку. Перевірте з’єднання з інтернетом або зателефонуйте нам.');
+            }
+        });
+        // плавний скрол
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        // анімація карток
+        const cards = document.querySelectorAll('.service-card, .extra-item, .benefit-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0px)';
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(18px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
